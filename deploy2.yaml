@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: java-exam-deploy
+  name: java-exam-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-exam-deploy
+  template:
+    metadata:
+      labels:
+        app: java-exam-deploy
+    spec:
+      containers:
+        - image: selmi1999/java-exam-image:latest
+          name: java-exam-image
